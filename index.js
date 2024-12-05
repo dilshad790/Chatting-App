@@ -14,16 +14,16 @@ io.on("connection",(socket)=>{
     console.log("A new user Connected",socket.id);
    
     // sending msg from server to all socket
-    // socket.on("user-msg",(msg)=>{
-    //     console.log("message:",msg);
-    //     io.emit('chat-msg',msg)
-    // })
+    socket.on("user-msg",(msg)=>{
+        console.log("message:",msg);
+        io.emit('chat-msg',msg)
+    })
 
     // sending msg from servet to all socket except sender
-    socket.on('user-msg',(msg)=>{
-        socket.broadcast.emit('chat-msg',msg)
+    // socket.on('user-msg',(msg)=>{
+    //     socket.broadcast.emit('chat-msg',msg)
 
-    })
+    // })
 
 
 
